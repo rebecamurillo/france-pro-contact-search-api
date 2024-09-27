@@ -2,8 +2,10 @@
 
 Api finds contact information for a company. 
 Contact information contains address and telephone number. 
-Input in query are : address, name, siret, siren
+To increase success result and accuracy, search is done in both Google Places API and SIRENE API.
 
+- Input in query are : address, name, siret, siren
+- Output expected is JSON with : email, address, phone data 
 
 ## Installation in local repo
 ### Install
@@ -46,6 +48,21 @@ Parameters in query :
 |address      | company address|
 |siret        | company siret  |
 |siren        | company siren  |
+
+Output is a JSON with email, address and phone data.
+
+```json
+{
+    "email": "",
+    "address": {
+        "street": "",
+        "city": "",
+        "postalCode": "",
+        "country": ""
+    },
+    "phone": "+33199999999"
+}
+```
 
 ### Example
 localhost:3000/companies/contact?name=EXPERDECO
